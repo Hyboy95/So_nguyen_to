@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>So_nguyen_to</title>
+</head>
+<body>
+<input type="number" placeholder="n số nguyên tố đầu tiên" id="number">
+<button id="btn">In ra</button>
+<p id="result"></p>
+</body>
+</html>
+<script>
+  let btn = document.getElementById('btn');
+  let result = document.getElementById('result');
+  btn.addEventListener('click', on_click)
+
+   function on_click () {
+       let n = parseInt(document.getElementById('number').value);
+       let count = 0;
+       for (let i=2; count < n; i++) {
+           let isPrime = true;
+           for (let j = 2; j < i ; j++) {
+               if (i % j === 0) {
+                   isPrime = false;
+                   break;
+               }
+           }
+           if (isPrime) {
+               result.innerHTML += `${i} <br>`;
+               count++;
+           }
+       }
+   }
+</script>
